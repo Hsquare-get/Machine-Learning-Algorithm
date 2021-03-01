@@ -70,7 +70,7 @@
 - 이해하기 쉬우나 Overfitting(과적합)이 잘 일어난다.
 - 선형 회귀분석처럼 간단한 문제에만 잘 맞고 복잡한 문제에선 잘 맞지 않는다.
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210301171031242.png" alt="image-20210301171031242" style="zoom: 67%;" />
+<img src="https://user-images.githubusercontent.com/64063767/109497901-14790e80-7ad6-11eb-8fae-9238881d293d.png" alt="image" style="zoom:67%;" />
 
 <br/>
 
@@ -100,7 +100,7 @@
 - 2000년대 초중반 때 많이 사용되었지만 더 좋은 알고리즘들이 나와서 최근에는 잘 쓰이지 않는 경향이 있다.
 - SVM은 데이터가 커질수록 학습시간이 매우 오래걸리는 단점이 있다.
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210301172027728.png" alt="image-20210301172027728" style="zoom: 67%;" />
+<img src="https://user-images.githubusercontent.com/64063767/109498039-425e5300-7ad6-11eb-899e-667a2f1202c9.png" alt="image" style="zoom:67%;" />
 
 <br/>
 
@@ -109,7 +109,7 @@
 - 각각의 모델(classifier or base learner or weak classifier)의 Output을 평균을 내거나 다수결 투표를 활용하여 여러개의 모델을 결합하는 모델
 - 보통 Decision Tree를 많이 사용하고, 크게 **Bagging, Random Forest, Boosting** 3가지 종류가 있다.
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210301172729030.png" alt="image-20210301172729030" style="zoom: 67%;" />
+<img src="https://user-images.githubusercontent.com/64063767/109498106-5b670400-7ad6-11eb-89f9-7c10d0988829.png" alt="image" style="zoom:67%;" />
 
 <br/>
 
