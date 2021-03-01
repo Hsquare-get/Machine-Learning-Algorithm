@@ -1,6 +1,6 @@
 # Examples of Deep Learning
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210301194339750.png" alt="image-20210301194339750"  />
+<img src="https://user-images.githubusercontent.com/64063767/109498357-b13bac00-7ad6-11eb-9f16-156d78529b8a.png" alt="image" style="zoom:67%;" />
 
 #### (0) Deep Learning
 
