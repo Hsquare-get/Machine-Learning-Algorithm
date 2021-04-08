@@ -8,7 +8,7 @@
 
 <br/>
 
-## 1. 상관 계수를 보는 방법
+## 1. 상관 계수로 상관성을 보는 방법
 
 ### 1.1 Pearson 상관계수(Pearson's Correalation Coefficient)
 
@@ -48,9 +48,9 @@
      - Pearson 상관계수(r) 특징
        - r은 두 변수 사이의 선형적인 **상관성의 정도**를 알려준다. 만일 상관분석을 시행한 후 변수들간에 상관성이 있다는 것이 인정된다면 회귀분석(Regression Analysis)을 시행한다.
        - **r을 가지고 비선형적인 상관성은 알 수 없으며, 또한 두 변수 사이의 인과성도 알 수 없다.**
-       - 
+       
+         
 
-- 
 
 <br/>
 
@@ -58,105 +58,68 @@
 
 <br/>
 
-## 2. 그래프를 통해 상관관계를 보는 방법
+## 2. 산점도를 통해 상관성을 보는 방법
 
-- scatter plot
+```python
+import matplotlib.pyplot as plt
 
-  ```python
-  import pandas as pd
-  import numpy as np
-  import matplotlib.pyplot as plt
-  
-  height = [65, 71, 69, 68, 67]
-  weight = [112, 136, 153, 142, 144]
-  
-  X = df['height']
-  Y = df['weight']
-  plt.plot(X, Y)
-  plt.show()
-  ```
+# outdoor temp & indoor temp
+x = df['outdoor_temp']
+y = df['indoor_temp']
+plt.scatter(x='outdoor_temp', y='indoor_temp', data=df)
+```
 
-  ```python
-  import pandas as pd
-  import matplotlib.pyplot as plt
-  import matplotlib
-  matplotlib.rcParams['axes.unicode_minus'] = False ## 마이나스 '-' 표시 제대로 출력 
-  from statsmodels.formula.api import ols
-  
-  fit = ols('Work_hours ~ Lot_size', data=df).fit()
-  fit = ols('Work_hours ~ Lot_size - 1',data=df).fit() # 절편항 제거
-  fit.summary() # 결정계수와 회귀계수추정값, 검정통계량, p-value 확인
-  
-  ## 회귀 계수
-  print(fit.params.Intercept) ## 절편
-  print(fit.params.Lot_size) ## 기울기
-  
-  ## 시각화
-  fig = plt.figure(figsize=(8,8))
-  fig.set_facecolor('white')
-  
-  plt.scatter(df['Lot_size'],df['Work_hours']) ## 원 데이터 산포도
-  plt.plot(df['Lot_size'],fit.fittedvalues,color='red') ## 회귀직선 추가
-  
-  plt.xlabel('Lot Size', fontsize=15)
-  plt.ylabel('Work Hours',fontsize=15)
-  plt.show()
-  ```
-
-  
+<img src="https://user-images.githubusercontent.com/64063767/113974260-951aef80-9878-11eb-9ce4-a2ef3d6aa1bd.png" alt="image"  />
 
 <br/>
 
-## 3. 모델링 방법
+## 3. 모델링을 통해 상관성을 보는 방법
 
 ### 3.1 단순 선형회귀(Simple Linear Regression)
 
+> 종속변수 Y와 독립변수 X 데이터가 있을 때 단순 선형회귀 모델을 만들어 상관성 분석
+
 $$
-Y = aX + b
+Y = \beta_0 + \beta_1X + \epsilon
 $$
 
-- 종속변수 Y와 독립변수 X 데이터가 있을 때 단순 선형회귀 모델을 만들어 상관성 분석을 한다.
+#### 3.1.1 통계표로 모델 검정
 
-  ```python
-  import statsmodels.api as sm
-  # from statsmodels.formula.api import ols
-  
-  height = [65, 71, 69, 68, 67]
-  weight = [112, 136, 153, 142, 144]
-  
-  model = sm.OLS(weight, height)
-  print(fitted_model.summary())
-  print(fitted_model.params) # 회귀 계수
-  ```
+```python
+import statsmodels.api as sm
 
-  ```python
-  from sklearn.linear_model import LinearRegression
-  import pandas as pd
-  import numpy as np
-  import matplotlib.pyplot as plt
-  
-  # DataFrame
-  Lot_size = [80, 30, 50, 90, 70]
-  Work_hours = [399, 121, 221, 376, 361]
-  
-  ### sklearn linear regression ###
-  x = df['Lot_size'].values.reshape(-1,1) # 차원 증가 시켜준다.
-  y = df['Work_hours']
-  
-  fit = LinearRegression().fit(x,y)
-  
-  # 회귀 계수
-  print(fit.intercept_) # 절편
-  print(fit.coef_) # 기울기
-  
-  # 예측값
-  print(fit.predict([[70]]))
-  print(fit.predict(x))
-  
-  plt.plot(x, y, 'o')
-  plt.plot(x, fit.predict(x))
-  plt.show()
-  ```
+# 통계적인 방법
+# statsmodel = sm.OLS(y, x).fit() # 절편 미포함
+statsmodel = sm.OLS.from_formula("S1_humi ~ humidity", humi_inout).fit()
 
-  
+display(statsmodel.summary())
+print(statsmodel.params)
+```
+
+![image](https://user-images.githubusercontent.com/64063767/113971470-cc3ad200-9873-11eb-8c50-4c5fd5837575.png)
+
+<br/>
+
+#### 3.1.2 sklearn 선형회귀 모델링
+
+```python
+from sklearn.linear_model import LinearRegression
+
+# 단순선형회귀(Simple Linear Regression) 모델링
+x = humi_inout['humidity'].values.reshape(-1,1)
+y = humi_inout['S1_humi'].values.reshape(-1,1)
+slrm = LinearRegression().fit(x, y)
+
+print('y절편:', slrm.intercept_)
+print('회귀계수(기울기):', slrm.coef_)
+
+# 예측값
+predicted = slrm.predict(x)
+
+plt.plot(x, y, 'o')
+plt.plot(x, slrm.predict(x))
+plt.show()
+```
+
+![image](https://user-images.githubusercontent.com/64063767/113971698-3fdcdf00-9874-11eb-9627-5ad93e078d47.png)
 
