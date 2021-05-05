@@ -64,7 +64,7 @@ $$
 
 | g(z) > 0.5                                                   | x1 + x2 = 3                                                  | x1^2 + x2^2 = 1                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20210505182738589](C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210505182738589.png) | ![image](https://user-images.githubusercontent.com/64063767/117121474-9a178400-adcf-11eb-9d8b-6faa4ab4a845.png) | ![image](https://user-images.githubusercontent.com/64063767/117121504-a3085580-adcf-11eb-8526-b2ce6dc92fbc.png) |
+| ![image](https://user-images.githubusercontent.com/64063767/117129714-026b6300-adda-11eb-9c6d-f17c3c0295e6.png) | ![image](https://user-images.githubusercontent.com/64063767/117121474-9a178400-adcf-11eb-9d8b-6faa4ab4a845.png) | ![image](https://user-images.githubusercontent.com/64063767/117121504-a3085580-adcf-11eb-8526-b2ce6dc92fbc.png) |
 
 <br/>
 
