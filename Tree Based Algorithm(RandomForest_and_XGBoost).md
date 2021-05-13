@@ -21,8 +21,10 @@
 
 > 여러개의 Weak Classifier(약분류기)를 결합하여 하나의 모델로 예측한 것보다 정확한 Strong Classifer(강분류기)를 만들어 더 좋은 성능을 내게하는 머신러닝 기법이다.
 
-- Bagging
+- Bagging(Bootstrap Aggregating)
+  - 서로 독립적으로 랜덤복원추출(random sampling)한 Bootstrap 표본들을 가지고 각각 여러개의 예측모델들이 학습한다. 학습된 모델들로부터 예측 결과들을 집계하여 최종 결과값을 구하는 학습 방식을 Bagging이라 한다.
 - Boosting 
+  - 서로 독립적이던 Bagging 방식과는 달리 이전모델의 오류를 고려하여 다음모델의 정확도를 높이는 학습방식을 Boosting이라 한다.
 
 
 
