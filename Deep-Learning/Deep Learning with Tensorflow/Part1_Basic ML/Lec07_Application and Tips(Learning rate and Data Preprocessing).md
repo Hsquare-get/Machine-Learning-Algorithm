@@ -106,3 +106,36 @@ Standardization = (data - np.mean(data)) / sqrt(np.sum((data - np.mean(data)) **
 
 <img src="https://user-images.githubusercontent.com/64063767/118359463-913c6480-b5be-11eb-84b7-d4ba332cec7f.png" alt="image" style="zoom:50%;" />
 
+<br/>
+
+## 3. Overfitting
+
+![image](https://user-images.githubusercontent.com/64063767/118398827-3f1a4280-b695-11eb-867b-2a942ff0fcf6.png)
+
+### Solution
+
+#### (1) Set a features
+
+- **Get more training data**: more data will actually make a difference (helps to fix high variance)
+
+- **Smaller set of features**: dimensionality reduction(**PCA**) (fixes high variance)
+
+  ```python
+  from sklearn.decomposition import PCA
+  pca = decomposition.PCA(n_components=3)
+  pca.fit(X)
+  X = pca.transform(X)
+
+- **Add additional features**: hypothesis is too simple(underfit), make hypothesis more specific (fixes high bias)
+
+<br/>
+
+#### (2) Regularization (Add term to loss)
+
+<img src="https://user-images.githubusercontent.com/64063767/118399786-c964a580-b699-11eb-8f94-61ef43242577.png" alt="image" style="zoom:67%;" />
+
+```python
+# Tensorflow code
+L2_loss = tf.nn.l2_loss(w) # output = sum(t**2) / 2
+```
+
