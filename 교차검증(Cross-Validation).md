@@ -1,4 +1,4 @@
-## Cross-Validation(교차검증)
+# Cross-Validation(교차검증)
 
 ![image](https://user-images.githubusercontent.com/64063767/108304413-55764680-71eb-11eb-83ac-ce2b593fcfdb.png)
 
@@ -12,7 +12,7 @@ dataset을 모델 훈련에 사용할 `training set`와 일반화 성능을 추�
 
 <br/>
 
-#### Holdout Method
+## Holdout Method
 
 ![image](https://user-images.githubusercontent.com/64063767/108305117-b6eae500-71ec-11eb-9154-5984c29f2215.png)
 
@@ -22,7 +22,7 @@ training set / validation set / test set 세 부분으로 나눌땐 6:2:2의 비
 
 <hr/>
 
-#### training / validation / test set으로 모델을 만들면되지 교차 검증은 왜 필요할까?
+### training / validation / test set으로 모델을 만들면되지 교차 검증은 왜 필요할까?
 
 고정적인 training set으로 모델을 만드는 경우 overfitting(과대적합)이 나타날 수 있습니다. 이러한 문제를 해결하고, 충분한 정확도로 일반화시킬 수 있는 모델을 만들기 위해 교차검증을  활용하여 모델을 평가한다.
 
@@ -30,7 +30,7 @@ training set / validation set / test set 세 부분으로 나눌땐 6:2:2의 비
 
 <br/>
 
-#### K-fold Cross Validation
+## K-fold Cross Validation
 
 ![image](https://user-images.githubusercontent.com/64063767/108306290-32e62c80-71ef-11eb-851c-d3fd3aac6d0a.png)
 
@@ -54,7 +54,7 @@ K-겹 교차검증은 가지고 있는 데이터를 K개의 그룹으로 나누�
 
 <br/>
 
-#### Leave-p-out Cross Validation
+## Leave-p-out Cross Validation
 
 ![image](https://user-images.githubusercontent.com/64063767/108307451-1ea32f00-71f1-11eb-9c1a-1151537f34f2.png)
 
@@ -66,8 +66,12 @@ validation set을 구성할 수 있는 경우의 수(훈련 및 검증에 소요
 
 <br/>
 
-#### Leave-one-out Cross Validation (LOOCV)
+## Leave-one-out Cross Validation (LOOCV)
 
 ![image](https://user-images.githubusercontent.com/64063767/108307051-c10ee280-71f0-11eb-8101-dee4f926720a.png)
 
 Leave-one-out 교차검증은 Leave-p-out 교차검증에서 p=1일 때의 경우를 말한다. Leave-p-out 교차검증 보다 계산시간에 대한 부담은 줄이고, 더 좋은 결과를 얻을 수 있기 때문에 선호되는 교차검증 방법 중 하나이다. 검증에 사용되는 validation set의 개수가 적어진 만큼 모델 훈련에 사용되는 데이터의 개수는 늘어난다. 모델 검증에 희생되는 데이터 개수가 단 하나이기 때문에, 나머지 모든 데이터를 모델 훈련에 사용할 수 있다는 것이 장점이다.
+
+<hr/>
+
+## Nested Cross Validation
