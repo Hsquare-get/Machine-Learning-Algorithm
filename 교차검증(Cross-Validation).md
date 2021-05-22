@@ -15,7 +15,7 @@ dataset을 모델 훈련에 사용할 `training set`와 일반화 성능을 추�
 
 <br/>
 
-### Holdout Method
+### 0. Holdout Method
 
 ![image](https://user-images.githubusercontent.com/64063767/108305117-b6eae500-71ec-11eb-9154-5984c29f2215.png)
 
@@ -25,7 +25,7 @@ training set / validation set / test set 세 부분으로 나눌땐 6:2:2의 비
 
 <hr/>
 
-### training / validation / test set으로 모델을 만들면되지 교차 검증은 왜 필요할까?
+#### training / validation / test set으로 모델을 만들면되지 교차 검증은 왜 필요할까?
 
 고정적인 training set으로 모델을 만드는 경우 overfitting(과대적합)이 나타날 수 있습니다. 이러한 문제를 해결하고, 충분한 정확도로 일반화시킬 수 있는 모델을 만들기 위해 교차검증을  활용하여 모델을 평가한다.
 
@@ -33,9 +33,9 @@ training set / validation set / test set 세 부분으로 나눌땐 6:2:2의 비
 
 <br/>
 
-## Traditional Cross-Validation
+## 1. Traditional Cross-Validation
 
-### K-fold Cross Validation
+### (1) K-fold Cross Validation
 
 ![image](https://user-images.githubusercontent.com/64063767/108306290-32e62c80-71ef-11eb-851c-d3fd3aac6d0a.png)
 
@@ -59,7 +59,7 @@ K-겹 교차검증은 가지고 있는 데이터를 K개의 그룹으로 나누�
 
 <br/>
 
-### Leave-p-out Cross Validation
+### (2) Leave-p-out Cross Validation
 
 ![image](https://user-images.githubusercontent.com/64063767/108307451-1ea32f00-71f1-11eb-9c1a-1151537f34f2.png)
 
@@ -71,7 +71,7 @@ validation set을 구성할 수 있는 경우의 수(훈련 및 검증에 소요
 
 <br/>
 
-### Leave-one-out Cross Validation (LOOCV)
+### (3) Leave-one-out Cross Validation (LOOCV)
 
 ![image](https://user-images.githubusercontent.com/64063767/108307051-c10ee280-71f0-11eb-8101-dee4f926720a.png)
 
@@ -79,7 +79,7 @@ Leave-one-out 교차검증은 Leave-p-out 교차검증에서 p=1일 때의 경�
 
 <br/>
 
-## Time Series Nested Cross Validation
+## 2. Time Series Nested Cross Validation
 
 - References
 
@@ -89,13 +89,13 @@ Leave-one-out 교차검증은 Leave-p-out 교차검증에서 p=1일 때의 경�
 
 <br/>
 
-### Why is Cross-Validation Different with Time Series?
+### (1) Why is Cross-Validation Different with Time Series?
 
-#### (1) Temporal Dependencies
+#### a. Temporal Dependencies
 
 - 시계열 데이터 경우 **Data Leakage** 문제를 방지하기 위해 k-fold 교차검증을 사용을 주의해야한다.
 
-#### (2) Arbitrary Choice of Test Set
+#### b. Arbitrary Choice of Test Set
 
 - test set가 임의적으로 선택되면 test set error가 독립적인 test set에서 잘못된 추정을 의미할 수 있기 때문에 **Nested Cross-Validation** 방법을 활용한다.
 
@@ -103,21 +103,21 @@ Leave-one-out 교차검증은 Leave-p-out 교차검증에서 p=1일 때의 경�
 
 <br/>
 
-### Nested Cross-Validation
+### (2) Nested Cross-Validation
 
 ![image](https://user-images.githubusercontent.com/64063767/119229802-8e101e00-bb54-11eb-924f-0f72175a74a0.png)
 
-#### 1. Predict Second Half
+#### a. Predict Second Half
 
-![](https://miro.medium.com/max/700/1*bkHYVCA4uD3k4FieJ-Nfjw.png)
+![Predict Second Half](https://miro.medium.com/max/700/1*bkHYVCA4uD3k4FieJ-Nfjw.png)
 
-#### 2. Day Forward-Chaining
+#### b. Day Forward-Chaining
 
 ![Day Forward Chaining](https://miro.medium.com/max/700/1*gYTT2d-Suszciijr10l7iQ.png)
 
 <br/>
 
-### Methods for Time Series Cross-Validation
+### (3) Methods for Time Series Cross-Validation
 
 | Image                                                        | Method                               | Split | Pros                                                         | Cons                                                         |
 | ------------------------------------------------------------ | ------------------------------------ | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
