@@ -1,4 +1,4 @@
-# Cross-Validation(교차검증)
+# 교차 검증(Cross-Validation)
 
 ![image](https://user-images.githubusercontent.com/64063767/108304413-55764680-71eb-11eb-83ac-ce2b593fcfdb.png)
 
