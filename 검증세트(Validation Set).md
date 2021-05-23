@@ -1,42 +1,48 @@
-## Train set / Validation set / Test set
+## 검증세트(Validation Set)
 
-https://ganghee-lee.tistory.com/38
+References
+- [Train / Test / Validation set의 차이](https://ganghee-lee.tistory.com/38)
+- [Machine Learning에서 validation set을 사용하는 이유](https://3months.tistory.com/118)
 
-https://3months.tistory.com/118
+---
 
-> 3등분으로 나누는 비율은 대체적으로 6:2:2를 가장 많이 쓰고, 이렇게 나누는 방법을 Simple Validation이라고 한다. Simple Validation 외에 k-Fold Validation이나 Leave-One-Out Validation 방법도 있지만 여기서는 Simple Validation 방법을 다룬다.
+## 1. Data Split
 
-<br/>
-
-- **Train set**
-
-  분석 모델을 만들기위한 학습용 데이터
-
-  **"모델을 학습하는데에는 오직 유일하게 Train set만 이용한다"**
-
-  보통 Train set을 이용해 각기 다른 모델을 서로 다른 epoch로 학습을 시킨다.
-
-  여기서 각기 다른 모델이란 hidden layer 혹은 hyper parameter에 약간씩 변화를 준 모델들이다.
+> Train / Validation / Test set 3등분으로 나누는 비율은 대체적으로 6:2:2를 가장 많이 쓰고, 이렇게 나누는 방법을 Simple Validation이라고 한다. Simple Validation 외에 k-Fold Validation이나 Leave-One-Out Validation 방법도 있지만 여기서는 Simple Validation 방법을 다룬다.
 
 <br/>
 
-- **Validation set**
+### Train set
 
-  여러 분석 모델 중 어떤 모델이 적합한지 선택하기 위한 검증용 데이터
+- 분석 모델을 만들기위한 학습용 데이터
 
-  학습이 이미 완료된 모델을 검증하기 위한 dataset
+- **"모델을 학습하는데에는 오직 유일하게 Train set만 이용한다"**
 
-  **"모델의 성능을 평가하기 위해서"**
+- 보통 Train set을 이용해 각기 다른 모델을 서로 다른 epoch로 학습을 시킨다.
 
-<br/>
-
-- **Test set**
-
-  최종적으로 선택된 분석 모델이 얼마나 잘 작동하는지 확인하기 위한 결과용 데이터
+- 여기서 각기 다른 모델이란 hidden layer 혹은 hyper parameter에 약간씩 변화를 준 모델들이다.
 
 <br/>
 
-validation set을 사용하는 이유는 간단하다. 바로 "모델의 성능을 평가하기 위해서" 이다.  training을 한 후에 만들어진 모형이 잘 예측을 하는지 그 성능을 평가하기 위해서 사용한다. training set의 일부를 모델의 성능을 평가하기 위해서 희생하는 것이다. 하지만 이 희생을 감수하지 못할만큼 data set의 크기가 작다면 cross-validation이라는 방법을 쓰기도 한다. cross-validation은 training set을 k-fold 방식을 통해 쪼개서 모든 데이터를 training과 validation 과정에 사용할 수 있게 한다.
+### Validation set
+
+- 여러 분석 모델 중 어떤 모델이 적합한지 선택하기 위한 검증용 데이터
+
+- 학습이 이미 완료된 모델을 검증하기 위한 dataset
+
+- **"모델의 성능을 평가하기 위해서"**
+
+<br/>
+
+### Test set
+
+- 최종적으로 선택된 분석 모델이 얼마나 잘 작동하는지 확인하기 위한 결과용 데이터
+
+<br/>
+
+## 2. Why use a validation set?
+
+validation set을 사용하는 이유는 간단하다. 바로 "**모델의 성능을 평가하기 위해서**" 이다.  training을 한 후에 만들어진 모형이 잘 예측을 하는지 그 성능을 평가하기 위해서 사용한다. training set의 일부를 모델의 성능을 평가하기 위해서 희생하는 것이다. 하지만 이 희생을 감수하지 못할만큼 data set의 크기가 작다면 cross-validation이라는 방법을 쓰기도 한다. cross-validation은 training set을 k-fold 방식을 통해 쪼개서 모든 데이터를 training과 validation 과정에 사용할 수 있게 한다.
 
 <br/>
 
@@ -46,11 +52,13 @@ validation set을 사용하는 이유는 간단하다. 바로 "모델의 성능�
 
 첫 번째는 test accuracy를 가늠해볼 수 있다는 것이다. machine learning의 목적은 결국 unseen data 즉, test data에 대해 좋은 성능을 내는 것이다. 그러므로 모델을 만든 후 이 모델이 unseen data에 대해 얼마나 잘 동작할지에 대해서 반드시 확인이 필요하다. 하지만 training data를 사용해 성능을 평가하면 안되기 때문에 따로 validation set을 만들어 정확도를 측정하는 것이다. 두 번째는 모델을 튜닝하여 모델의 성능을 높일 수 있다. 예를 들어 overfitting 등을 막을 수 있다. 예를 들어 training accuracy는 높은데 validation accuracy는 낮다면 데이터가 training set에 overfitting이 일어났을 가능성을 생각해볼 수 있다. 그렇다면 overfitting을 막아서 training accuracy를 희생하더라도 validation accuracy와 training accuracy를 비슷하게 맞춰줄 필요가 있다. 예를 들어 Deep learing을 모델을 구축한다면 regularization 과정을 한다거나 epoch을 줄이는 등의 방식으로 overfitting을 막을 수 있다. 
 
+<br/>
 
+즉, **validation set은 training 과정에 관여**를 하며, **training이 된 여러가지 모델 중 가장 좋은 하나의 모델을 고르기 위한 셋**이다. **test set은 모든 training 과정이 완료된 후에 최종적으로 모델의 성능을 평가하기 위한 셋**이다. 만약 test set이 모델을 개선하는데 쓰인다면, 그건 test set이 아니라 validation set이다. 만약 여러 모델을 성능 평가하여 그 중에서 가장 좋은 모델을 선택하고 싶지 않은 경우에는 validation set을 만들지 않아도 된다. 하지만 이 경우에는문제가 생길 수 있다. (test accuracy를 예측할 수도 없고, 모델 튜닝을 통해 overfitting을 방지할 수도 없다.)
 
-즉, validation set은 training 과정에 관여를 하며, training이 된 여러가지 모델 중 가장 좋은 하나의 모델을 고르기 위한 셋이다. test set은 모든 training 과정이 완료된 후에 최종적으로 모델의 성능을 평가하기 위한 셋이다. 만약 test set이 모델을 개선하는데 쓰인다면, 그건 test set이 아니라 validation set이다. 만약 여러 모델을 성능 평가하여 그 중에서 가장 좋은 모델을 선택하고 싶지 않은 경우에는 validation set을 만들지 않아도 된다. 하지만 이 경우에는문제가 생길 수 있다. (test accuracy를 예측할 수도 없고, 모델 튜닝을 통해 overfitting을 방지할 수도 없다.)
+<br/>
 
-<hr>
+## 3. Validation and Test Set Comparison
 
 Validation set과 Test set의 공통점은 이 데이터를 통해 모델을 update 즉, **학습을 시키지 않는다**는 것이다.
 
