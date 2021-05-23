@@ -1,10 +1,18 @@
 # 모델성능 평가지표(Evaluation Metrics)
 
+- References
+  - [모델성능 평가지표 (회귀모델, 분류모델)](https://rk1993.tistory.com/entry/%EB%AA%A8%EB%8D%B8-%EC%84%B1%EB%8A%A5-%ED%8F%89%EA%B0%80-%EC%A7%80%ED%91%9C-%ED%9A%8C%EA%B7%80-%EB%AA%A8%EB%8D%B8-%EB%B6%84%EB%A5%98-%EB%AA%A8%EB%8D%B8)
+  - [분류성능평가지표](https://sumniya.tistory.com/26)
+
+---
+
+<img src="https://user-images.githubusercontent.com/64063767/119266226-e282ce80-bc24-11eb-9fe3-db31d198cef1.png" alt="image" style="zoom:67%;" />
+
 ## Evaluation Metrics 종류
 
 | Regression Model                                             | Classification Model                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| MSE<br />RMSE<br />RMSLE<br />CVRMSE<br />MAE<br />MAPE<br />sMAPE<br />mMAPE<br />R2 Score(R Squared) | Accuracy<br />Precision<br />Recall<br />F1 Score<br />Fall-out<br />Log loss<br />Cost Matrix Gain<br />Cumulative Lift Chart |
+| MSE<br />RMSE<br />RMSLE<br />CVRMSE<br />MAE<br />MAPE<br />sMAPE<br />mMAPE<br />R2 Score(R Squared) | Accuracy<br />Precision<br />Recall<br />F1 Score<br />Fall-out<br />Log loss<br />Cost Matrix Gain<br />Cumulative Lift Chart<br />ROC curve & AUC |
 
 <br/>
 
@@ -35,7 +43,7 @@
 
 > RMSE에 로그를 취해준 것
 
-- 이상치에 robust하다. (이상치에 영향을 적게 받는 통계량을 **robust한 통계량**이라 함 )
+- 이상치에 robust하다. (이상치에 영향을 적게 받는 통계량을 **robust한 통계량**이라 함)
   RMSLE는 이상치가 있더라도 값의 변동폭이 크지 않다.
 - RMSE와 달리 실제값과 예측값의 상대적 오차를 측정해준다.
 - Under Estimation에 큰 패널티를 부여한다. 즉, 예측값이 실제값보다 작을 때 패널티 부여.
@@ -110,6 +118,10 @@
 <br/>
 
 ## Classification Model
+
+### Confusion Matrix (오차행렬)
+
+![image](https://user-images.githubusercontent.com/64063767/119266403-a4d27580-bc25-11eb-8125-7333b3200438.png)
 
 ### Accuracy (정확도)
 
