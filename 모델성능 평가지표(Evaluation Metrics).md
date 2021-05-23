@@ -1,4 +1,4 @@
-# Evaluation Metrics
+# 모델성능 평가지표(Evaluation Metrics)
 
 ## Evaluation Metrics 종류
 
@@ -111,3 +111,36 @@
 
 ## Classification Model
 
+### Accuracy (정확도)
+
+> 전체에서 정답을 맞춘 비율
+
+- Bias에 관해 단점을 가진다. (**정확도 역설**)
+- 실제 데이터에 Negative 비율이 너무 높아서 희박한 가능성으로 발생할 상황에 대해 제대로된 분류를 해주는지 평가해줄 지표는 Precision(정밀도)와 Recall(재현율)이다.
+
+<br/>
+
+### Recall (재현율)
+
+> 실제 True인 것 중에서 모델이 True라고 예측한 것의 비율
+
+- 실제 데이터에서 Negative 비율이 너무 높아서 희박한 가능성으로 발생할 상황에 유용하다.
+- 언제나 True만 답하는 분류기가 있다면 Accuracy는 실제 True인 경우에 대해서만큼은 정확하게 맞힐 수 있기 때문에 Recall은 1이 된다.
+
+<br/>
+
+### Precision (정밀도)
+
+> True라고 분류한 것 중에서 길제 True인 것의 비율
+
+- 언제나 True만 답하는 분류기가 있다면 Recall은 1로 나오겠지만, Precision은 0에 가깝게 나온다.
+- **Recall과 Precision은 서로 Trade Off 관계**
+- Recall과 Precision 모두 유용한 지표이긴 하지만 충분히 성능을 표현하기에는 한계가 있다. 그래서 이를 보완한 것이 Recall과 Precision의 조화평균 F1 Score다.
+
+<br/>
+
+### F1 Score
+
+> Precision과 Recall의 조화평균으로 F1 Score가 높아야 성능이 좋음
+
+- 산술평균을 사용하지 않는 이유는 Precision과 Recall 둘 중 하나가 0에 가깝게 낮을 때 지표에 그것이 잘 반영되도록, 즉 두 지표를 모두 균형있게 반영하여 모델의 성능이 좋지 않다는 것을 잘 확인하기 위해 조화평균을 사용한다.
