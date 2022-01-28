@@ -67,3 +67,9 @@ keras_model.fit(x_train, y_train,
 # Load best model
 keras_model_best = keras.models.load_model('best_model.h5')
 ```
+
+<br/>
+
+## Reference
+
+- [Keras - EarlyStopping 주의사항](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=cjh226&logNo=221468928164)
