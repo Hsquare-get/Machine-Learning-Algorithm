@@ -1,11 +1,5 @@
 # 모델성능 평가지표(Evaluation Metrics)
 
-- References
-  - [모델성능 평가지표 (회귀모델, 분류모델)](https://rk1993.tistory.com/entry/%EB%AA%A8%EB%8D%B8-%EC%84%B1%EB%8A%A5-%ED%8F%89%EA%B0%80-%EC%A7%80%ED%91%9C-%ED%9A%8C%EA%B7%80-%EB%AA%A8%EB%8D%B8-%EB%B6%84%EB%A5%98-%EB%AA%A8%EB%8D%B8)
-  - [분류성능평가지표](https://sumniya.tistory.com/26)
-
----
-
 <img src="https://user-images.githubusercontent.com/64063767/119266226-e282ce80-bc24-11eb-9fe3-db31d198cef1.png" alt="image" style="zoom:67%;" />
 
 ## Evaluation Metrics 종류
@@ -143,7 +137,7 @@
 
 ### Precision (정밀도)
 
-> True라고 분류한 것 중에서 길제 True인 것의 비율
+> True라고 분류한 것 중에서 실제 True인 것의 비율
 
 - 언제나 True만 답하는 분류기가 있다면 Recall은 1로 나오겠지만, Precision은 0에 가깝게 나온다.
 - **Recall과 Precision은 서로 Trade Off 관계**
@@ -156,3 +150,11 @@
 > Precision과 Recall의 조화평균으로 F1 Score가 높아야 성능이 좋음
 
 - 산술평균을 사용하지 않는 이유는 Precision과 Recall 둘 중 하나가 0에 가깝게 낮을 때 지표에 그것이 잘 반영되도록, 즉 두 지표를 모두 균형있게 반영하여 모델의 성능이 좋지 않다는 것을 잘 확인하기 위해 조화평균을 사용한다.
+
+<br/>
+
+## References
+
+- [모델성능 평가지표 (회귀모델, 분류모델)](https://rk1993.tistory.com/entry/%EB%AA%A8%EB%8D%B8-%EC%84%B1%EB%8A%A5-%ED%8F%89%EA%B0%80-%EC%A7%80%ED%91%9C-%ED%9A%8C%EA%B7%80-%EB%AA%A8%EB%8D%B8-%EB%B6%84%EB%A5%98-%EB%AA%A8%EB%8D%B8)
+- [분류성능평가지표](https://sumniya.tistory.com/26)
+
