@@ -19,7 +19,7 @@ max_depth = 4 # 깊이가 4보다 크게 가지를 치지 않는다
 
 ### 1.1 정보 균일도 측정
 
-Decision Tree에서 노드를 분할하는 기준으로 **정보이득**과 **지니계수**를 사용한다.
+Decision Tree에서 노드를 분할하는 기준으로 **정보이득** 또는 **지니계수**를 이용한다.
 
 #### 1.1.1 정보이득(Information Gain)
 
@@ -68,7 +68,7 @@ RandomForest보다 학습 속도가 빠르다는 장점이 있다.
 
 ![XGBoost](https://user-images.githubusercontent.com/64063767/151815515-c90ebfab-d64a-459f-8170-be676f937cf0.png)
 
-
+<br/>
 
 ## References
 
