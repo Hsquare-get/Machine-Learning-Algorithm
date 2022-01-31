@@ -62,11 +62,15 @@ Bagging(Bootstrap Aggregation)은 서로 독립적으로 랜덤복원추출한 B
 
 ### 2.2 XGBoost
 
-XGboost는 Boosting 학습 방식의 알고리즘 중 하나이다.
+**Boosting**
 
-Boosting 알고리즘은 여러 개의 약한 학습기(weak learner)를 순차적으로 학습-예측하면서 **잘못 예측한 데이터에 가중치 부여**를 통해 오류를 개선해 나가는 학습 방식이다. 
+Boosting 알고리즘은 여러 개의 약한 학습기(weak learner)를 순차적으로 학습-예측하면서 **잘못 예측한 데이터에 가중치 부여**를 통해 오류를 개선해 나가는 학습 방식이다.
 
-RandomForest보다 학습 속도가 빠르다는 장점이 있다.
+Boosting 알고리즘으로 GBM, AdaBoost, XGBoost 등이 있다.
+
+GBM은 AdaBoost와 유사하지만 경사하강법(Gradient Descent)을 통해 가중치를 업데이트한다는 큰 차이가 있다.
+
+Boosting 알고리즘은 순차적으로 학습하기에 학습 시간이 매우 오래 걸리는 단점이 있다. 이러한 단점을 극복하기 위해 병렬학습이 가능하도록 구현한 머신러닝 라이브러리가 XGBoost이다. XGBoost는 동일 데이터셋에 대해 RandomForest보다 학습 속도가 빠르다는 장점이 있다.
 
 ![XGBoost](https://user-images.githubusercontent.com/64063767/151815515-c90ebfab-d64a-459f-8170-be676f937cf0.png)
 
