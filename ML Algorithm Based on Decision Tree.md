@@ -74,6 +74,16 @@ Boosting 알고리즘은 순차적으로 학습하기에 학습 시간이 매우
 
 ![XGBoost](https://user-images.githubusercontent.com/64063767/151815515-c90ebfab-d64a-459f-8170-be676f937cf0.png)
 
+### 2.3 LightGBM
+
+XGBoost 대비 더 빠른 학습과 예측 수행시간이 가능하며 더 작은 메모리 사용량으로 학습이 가능하다.
+
+Category 변수의 자동 변환과 최적 분할이 가능하다.
+
+균형트리분할(Level Wise) 방식인 XGBoost와 달리 LightGBM은 리프중심으로 트리분할(Leaf Wise)한다.
+
+![image](https://user-images.githubusercontent.com/64063767/151936289-60c7b1a4-b3ec-4d10-b261-603a87479689.png)
+
 <br/>
 
 ## References
