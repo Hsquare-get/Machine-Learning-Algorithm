@@ -46,7 +46,7 @@ Decision Tree에서 노드를 분할하는 기준으로 **정보이득** 또는 
 
 <br/>
 
-## 2. Ensemble Model
+## 2. Ensemble(앙상블)
 
 여러개의 Weak Classifier(약분류기)를 결합하여 하나의 모델로 예측한 것보다 정확한 Strong Classifer(강분류기)를 만들어 더 좋은 성능을 내게하는 머신러닝 기법이다.
 
