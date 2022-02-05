@@ -1,4 +1,4 @@
-# Deep Learning
+# 딥러닝(Deep Learning)
 
 ## 1. Artificial Neural Network(ANN)
 
