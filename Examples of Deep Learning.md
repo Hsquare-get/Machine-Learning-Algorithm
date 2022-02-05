@@ -1,19 +1,21 @@
-# Examples of Deep Learning
+# Deep Learning
 
-<img src="https://user-images.githubusercontent.com/64063767/109498357-b13bac00-7ad6-11eb-9f16-156d78529b8a.png" alt="image" style="zoom:67%;" />
+## 1. Artificial Neural Network(ANN)
 
-#### (0) Deep Learning
+### Multi-Layer Perceptron(MLP)
+
+인공신경망(ANN)에서 은닉층이 2개 이상인 신경망을 Multi-Layer Percetptron이라고 한다.
+
+<img src="https://user-images.githubusercontent.com/64063767/109469988-25178d80-7ab2-11eb-90bb-3a5f60717b07.png" alt="image" style="zoom:67%;" />
 
 - 입력(Input layer), 은닉(Hidden layer), 출력(Output layer)층으로 구성된 모형으로서 각 층을 연결하는 노드의 가중치(weight)를 업데이트하면서 학습
 - 다층의 layer를 통해 복잡한 데이터의 학습이 가능하도록 함(graphical representation learning)
 - 알고리즘 및 GPU의 발전이 deep learning의 부흥을 이끌었다.
 - Overfitting이 심하게 일어나고 학습시간이 매우 오래걸린다.
 
-<img src="https://user-images.githubusercontent.com/64063767/109469988-25178d80-7ab2-11eb-90bb-3a5f60717b07.png" alt="image" style="zoom:67%;" />
-
 <br/>
 
-#### (i) CNN(Convolutional Neural Network)
+## 2. CNN(Convolutional Neural Network)
 
 - 이미지 처리에 사용되는 Deep Learning
 
@@ -24,7 +26,7 @@
 
 <br/>
 
-#### (ii) RNN(Recurrent Neural Network)
+## 3. RNN(Recurrent Neural Network)
 
 - 기존 Neural Network(Vanila NN)로는 Sequence data를 처리할 수 없었기 때문에 새로운 Neural Network 모델을 만든 것이 RNN(Recurrenc Neural Network)이다.
 
@@ -36,7 +38,7 @@
 
 <br/>
 
-#### (iii) AutoEncoder
+## 4. AutoEncoder
 
 - X를 가지고 X를 예측한 다음에 내부에서 패턴을 찾아내는 Unsupervised Learning
 - 기존의 Neural Network 형태에서 출력값과 입력값의 개수가 같은 모델
@@ -50,7 +52,7 @@
 
 <br/>
 
-#### (iv) GAN(Generative Adversarial Network)
+## 5. GAN(Generative Adversarial Network)
 
 - Data를 만들어내는 **Generator**와 만들어진 data를 평가하는 **Discriminator**가 서로 대립적(Adversarial)으로 학습해가며 성능을 점차 개선해나간다.
 

@@ -10,6 +10,8 @@ Decision Tree(의사결정나무)는 마치 스무고개처럼 YES/NO의 이진 
 
 이해하기는 쉬우나 트리에 가지가 너무 많다면 Overfitting(과적합)이 되기 쉽다는 단점이 있어서 이를 막기 위한 전략으로 Pruning(가지치기) 기법을 활용하기도 한다. 즉, 최대 깊이나 끝노드인 Terminal node(Leaf node)의 최대 개수, 혹은 하나의 노드가 분할하기 위한 최소 데이터 수를 제한하는 것이다.
 
+선형 회귀분석처럼 간단한 문제에는 잘 맞지만 복잡한 문제에서는 잘 맞지 않는다.
+
 ```python
 min_sample_split = 10 # 한 노드에 10개의 데이터가 있다면 그 노드는 더이상 분기를 하지 않는다
 max_depth = 4 # 깊이가 4보다 크게 가지를 치지 않는다
@@ -48,13 +50,13 @@ Decision Tree에서 노드를 분할하는 기준으로 **정보이득** 또는 
 
 ## 2. Ensemble(앙상블)
 
-여러개의 Weak Classifier(약분류기)를 결합하여 하나의 모델로 예측한 것보다 정확한 Strong Classifer(강분류기)를 만들어 더 좋은 성능을 내게하는 머신러닝 기법이다.
+여러개의 Weak Classifier(약분류기)의 예측값을 투표나 평균을 내어 하나의 모델로 예측한 것보다 정확한 Strong Classifer(강분류기)를 만들어 더 좋은 성능을 내게하는 머신러닝 기법이다.
 
 ![image](https://user-images.githubusercontent.com/64063767/151815222-85fbb36f-5e4f-47a4-b4ec-ac4a1ff7792c.png)
 
 ### 2.1 RandomForest
 
-기존 Decision Tree의 과적합 문제를 해결하기 위해 등장한 Bagging 방식의 알고리즘이다.
+기존 DecisionTree의 과적합 문제를 해결하기 위해 등장한 Bagging 방식의 알고리즘이다.
 
 Bagging(Bootstrap Aggregation)은 서로 독립적으로 랜덤복원추출한 Bootstrap 표본들로 각각 여러개의 예측모델들을 만드는 학습 방식이다. 학습된 모델로부터 예측 결과들을 집계하여 최종 결과값을 구한다.
 
