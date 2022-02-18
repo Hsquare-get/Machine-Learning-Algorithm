@@ -1,4 +1,4 @@
-# Decision Tree
+# 결정트리(DecisionTree)
 
 <img src="https://user-images.githubusercontent.com/64063767/109497901-14790e80-7ad6-11eb-8fae-9238881d293d.png" alt="image" style="zoom:67%;" />
 
