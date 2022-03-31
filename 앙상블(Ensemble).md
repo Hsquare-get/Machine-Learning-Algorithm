@@ -61,8 +61,6 @@
 
 <img src="https://user-images.githubusercontent.com/64063767/118443383-c82d8a00-b726-11eb-93ec-c6c47c96267c.png" alt="image" style="zoom:67%;" />
 
-![image](https://user-images.githubusercontent.com/64063767/118444978-ce246a80-b728-11eb-9532-1e6598a45d48.png)
-
 - GBM은 AdaBoost와 유사하지만 경사하강법(Gradient Descent)을 통해 가중치를 업데이트한다는 큰 차이가 있다.
 - GBM은 stump나 tree가 아닌 하나의 leaf(single leaf)부터 시작한다.
 - GBM은 residual을 줄이는 방향으로 weak learner들을 결합해 나간다.
@@ -74,6 +72,8 @@
 ### 2.3 XGBoost
 
 <img src="https://user-images.githubusercontent.com/64063767/151815515-c90ebfab-d64a-459f-8170-be676f937cf0.png" alt="XGBoost" style="zoom:67%;" />
+
+![image](https://user-images.githubusercontent.com/64063767/118444978-ce246a80-b728-11eb-9532-1e6598a45d48.png)
 
 - Boosting 알고리즘은 순차적으로 학습하기에 학습 시간이 매우 오래 걸리는 단점이 있다.
 - 이러한 단점을 극복하기 위해 **병렬학습**이 가능하도록 구현한 머신러닝 라이브러리가 XGBoost이다.
